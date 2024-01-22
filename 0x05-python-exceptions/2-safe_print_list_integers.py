@@ -5,11 +5,10 @@ def safe_print_list_integers(my_list=[], x=0):
         for i in range(x):
             value = my_list[i]
             if type(value) == int:
-                print("{:d}".format(value), end=" ")
+                print("{:d}".format(value), end="")
                 count += 1
-
-    except (IndexError, TypeError, ValueError):
-        pass
+    except IndexError as e:
+        print("{e}:list of index out of range")
     
     finally:
         print()
