@@ -6,9 +6,13 @@ def my_div(a, b):
     return a / b
 
 result = safe_function(my_div, 10, 2)
+
+
 print("result of my_div: {}".format(result))
 
 result = safe_function(my_div, 10, 0)
+
+
 print("result of my_div: {}".format(result))
 
 
