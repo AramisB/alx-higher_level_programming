@@ -1,0 +1,20 @@
+#2-matrix_divided.txt
+
+#2-matrix_divided.py
+
+def matrix_divided(matrix, div):
+	"""
+	A function that divides all the elements of a matrix
+	arguments: matrix(list) - a list with all the elements
+             	 : div(int/float) - the divisor 
+    	Raises:
+	    TypeError: if matrix is not a list
+            TypeError: if f the rows in the matrix are not the same size
+            TypeError: if div is not an int or a float
+            ZeroDivisionError: if div is 0
+  	return: the new matrix after division
+
+	Usage examples:
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	>>> matrix = [
+		

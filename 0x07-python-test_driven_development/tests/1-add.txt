@@ -1,0 +1,75 @@
+# 0-add_integer.py
+
+    This module defines and addition function "add_integer(a, b=98)" that adds two numbers.
+
+    :param a: The first number (default type: int)
+    :param b: The second number (default type: int)
+    :return: The sum of a and b (type: int)
+
+    Usage Examples:
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
+
+    >>> add_integer(2, -3)
+    -1
+
+    >>> add_integer(2.0, 3.0)
+    5
+
+    >>> add_integer(2.9, 0.2)
+    2
+
+    >>> add_integer(-2.9, -0.2)
+    -2
+
+    >>> add_integer(2.3, -3)
+    -1
+
+    >>> add_integer(2)
+    100
+
+    Non-Numbers:
+    >>> add_integer("hello", 3)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(2, "hello")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(2.3, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer("hello", "there")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    Handling Infinity and NaN:
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(2, float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(2, float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+    """
+    # Check if both arguments are either integers or floats
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Both arguments must be either integers or floats")
+
+    # Convert to integers and perform addition
+    return int(a) + int(b)
