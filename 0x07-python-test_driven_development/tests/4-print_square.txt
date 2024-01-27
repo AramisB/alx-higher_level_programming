@@ -1,0 +1,66 @@
+#4-print_square.txt
+
+#4-print_square.py
+
+def print_square(size):
+    	"""
+    	Function that prints a square.
+    	Variable:
+        	size (int): The size length of a square.
+    	Raises:
+        	TypeError: If size is not an integer.
+        	ValueError: If size is less than 0.
+    	Test cases:
+    	>>> print_square = __import__('4-print_square').print_square
+
+    	# Valid sizes
+    	>>> print_square(1)
+    	#
+
+    	>>> print_square(4)
+    	####
+    	####
+    	####
+   	####
+
+    	>>> print_square(0)
+
+    	>>> print_square(10)
+    	##########
+   	##########
+    	##########
+    	##########
+    	##########
+    	##########
+    	##########
+    	##########
+    	##########
+    	##########
+
+    	# Invalid sizes
+    	>>> print_square("Hello")
+    	Traceback (most recent call last):
+      	...
+    	TypeError: size must be an integer
+
+    	>>> print_square(-7)
+    	Traceback (most recent call last):
+      	...
+    	ValueError: size must be >= 0
+
+    	>>> print_square(1.7)
+    	Traceback (most recent call last):
+     	...
+    	ValueError: size must be an integer
+    	
+	"""    	
+
+	if not isinstance(size, int):
+        	raise TypeError("size must be an integer")
+    	if size < 0:
+        	raise ValueError("size must be >= 0")
+    	for i in range(size):
+        	for j in range(size):
+            		print("#", end="")
+       		print("")
+

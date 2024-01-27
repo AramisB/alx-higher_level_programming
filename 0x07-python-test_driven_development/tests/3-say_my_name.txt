@@ -1,0 +1,46 @@
+#3-say_my_name.txt
+
+#3-say_my_name.py
+
+def say_my_name(first_name, last_name=""):
+    	"""
+    	Defines a function that prints first and second name.
+    	Variables:
+        	first_name (str): The first name.
+        	last_name (str): The second name.
+    	Raises:	TypeError: If either name is not string.
+
+    	Test Cases:
+    	#1: Both first and last name
+    	>>> say_my_name = __import__('3-say_my_name').say_my_name
+    	>>> say_my_name("John", "Smith")
+    	My name is John Smith
+
+    	#2: Just the first name
+    	>>> say_my_name("Bob")
+    	My name is Bob
+
+    	#3: No variable present
+    	>>> say_my_name()
+    	Traceback(most recent call last):
+    	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+    	#4:Invalid type(names)
+   	>>> say_my_name(5, "Barry")
+    	Traceback(most recent call last):
+    	...
+    	TypeError: first_name must be a string
+
+    	>>> say_my_name("Brenda", 2707)
+    	Traceback(most recent call last):
+    	...
+    	TypeError: second_name must be a string
+    	
+	"""
+    
+
+	if not isinstance(first_name, str):
+        	raise TypeError("first_name must be a string")
+    	if not isinstance(last_name, str):
+        	raise TypeError("last_name must be a string")
+    	print(f"My name is {first_name} {last_name}")
