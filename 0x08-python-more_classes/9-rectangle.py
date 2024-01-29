@@ -93,7 +93,16 @@ class Rectangle:
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
-                                                                                                                                  return rect_1
+            return rect_1
+
+    @classmethod
+    def square(cls, size=0):
+        """
+        Returns a new rectangle instance
+        arg:cls - the class
+        size (int) - size of the square(equal to width and height)
+        """
+        return (cls(size, size))
 
     def __str__(self):
         """
@@ -119,30 +128,3 @@ class Rectangle:
         """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """
-        Returns the biggest rectangle based on the area
-        args: rect_1 - the first rectangle
-              rect_2 - the second rectangle
-        raises: rect_1 and rect_2 must be instances of Rectangle
-        return: rect_1 if both have the same area value
-        """
-        if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangle")
-
-        if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
-
-        if rect_1.area() >= rect_2.area():
-            return rect_1
-
-    @classmethod
-    def square(cls, size=0):
-        """
-        Returns a new rectangle instance
-        arg:cls - the class
-            size (int) - size of the square(equal to width and height)
-        """
-        return (cls(size, size))
