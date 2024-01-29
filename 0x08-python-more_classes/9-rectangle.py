@@ -128,4 +128,4 @@ class Rectangle:
         arg:cls - the class
             size (int) - size of the square(equal to width and height)
         """
-        return cls(size, size)
+        return (cls(size, size))
