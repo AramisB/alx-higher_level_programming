@@ -40,18 +40,18 @@ def print_square(size):
     	# Invalid sizes
     	>>> print_square("Hello")
     	Traceback (most recent call last):
-      	...
+      	 ...
     	TypeError: size must be an integer
 
     	>>> print_square(-7)
     	Traceback (most recent call last):
-      	...
-    	ValueError: size must be >= 0
+      	 ...
+	ValueError: size must be >=0
 
     	>>> print_square(1.7)
     	Traceback (most recent call last):
-     	...
-    	ValueError: size must be an integer
+     	 ...
+    	TypeError: size must be an integer
     	
 	"""    	
 
