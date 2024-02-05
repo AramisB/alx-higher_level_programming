@@ -43,4 +43,10 @@ class Rectangle(BaseGeometry):
         A public instance that calculates the area
         Raises: Exception
         """
-        raise Exception("area() is not implemented")
+        return (self.__width * self.__height)
+
+    def __str__(self):
+        """
+        Returns a string representation of a rectangle
+        """
+        return f"[Rectangle] {self.__width} / {self.__height}"
