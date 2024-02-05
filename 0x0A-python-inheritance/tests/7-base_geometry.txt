@@ -2,7 +2,13 @@ base_geometry.txt
 """
 #Test cases for BaseGeometry.integer_validator
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+#print area
 >>> base_geo = BaseGeometry()
+>>> base_geo.area()
+Traceback (most recent call last):
+	...
+Exception: area() is not implemented
 
 #value as int
 >>> base_geo.integer_validator("height", 74)
@@ -12,6 +18,12 @@ base_geometry.txt
 Traceback (most recent call last):
     ...
 TypeError: weight must be an integer
+
+#passing a boolean value
+>>> base_geo.integer_validator("number", True)
+Traceback (most recent call last):
+	...
+TypeError: number must be an integer
 
 #value as a string
 >>> base_geo.integer_validator("name", "Brenda")
