@@ -1,24 +1,8 @@
 #!/usr/bin/python3
 """
-A module for class BaseGeometry
+A module for class Rectangle
 """
-
-
-class BaseGeometry:
-    """
-    A class that defines geometry
-    """
-
-    def integer_validator(self, name, value):
-        """
-        a public isntace that validates value
-        Raises: TypeError - if value is not an integer
-                ValueError - if value <= 0
-        """
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -34,13 +18,6 @@ class Rectangle(BaseGeometry):
         """
         super().__init__()
         self.integer_validator("width", width)
-        self.integer_validator("height", height)
         self.__width = width
+        self.integer_validator("height", height)
         self.__height = height
-
-    def area(self):
-        """
-        A public instance that calculates the area
-        Raises: Exception
-        """
-        raise Exception("area() is not implemented")
