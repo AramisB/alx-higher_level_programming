@@ -6,11 +6,12 @@ A module that creates a class MyInt
 
 class MyInt(int):
     """
-    A class that inherits from int. It's a rebel that inverts == and != opertors
+    A class that inherits from int.
+    It's a rebel that inverts == and != opertors
     """
     def __eq__(self, value):
         """
-        Overrides == opeartor with != 
+        Overrides == opeartor with !=
         """
         return self.real != value
 
