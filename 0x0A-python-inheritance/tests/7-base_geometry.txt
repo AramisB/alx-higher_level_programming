@@ -1,0 +1,34 @@
+base_geometry.txt
+"""
+#Test cases for BaseGeometry.integer_validator
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> base_geo = BaseGeometry()
+
+#value as int
+>>> base_geo.integer_validator("height", 74)
+
+#value as float
+>>> base_geo.integer_validator("weight", 65.7)
+Traceback (most recent call last):
+    ...
+TypeError: weight must be an integer
+
+#value as a string
+>>> base_geo.integer_validator("name", "Brenda")
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+#value equals to 0
+>>> base_geo.integer_validator("length", 0)
+Traceback (most recent call last):
+    ...
+ValueError: length must be greater than 0
+
+#value less than 0
+>>> base_geo.integer_validator("number", -7)
+Traceback (most recent call last):
+    ...
+ValueError: number must be greater than 0
+
+"""
