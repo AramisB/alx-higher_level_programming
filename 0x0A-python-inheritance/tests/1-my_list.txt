@@ -30,3 +30,8 @@ class MyList(list):
 	>>> my_list = MyList([10, 15, 3, 8, 9, 8, 11, 16, 15, 10])
 	>>> my_list.print_sorted()
 	[3, 8, 8, 9, 10, 10, 11, 15, 15, 16]
+
+	#Large numbers
+	>>> my_list = MyList(list(range(10**4, 2, -2)))
+	>>> my_list.print_sorted()
+	[4, 6, 8, ... , 10**4]
