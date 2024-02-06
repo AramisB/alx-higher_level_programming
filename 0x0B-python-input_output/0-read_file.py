@@ -7,5 +7,4 @@ def read_file(filename=""):
     Argument: filename - name of the file. Defaults to an empty string
     """
     with open(filename, encoding="utf-8") as Myfile:
-        for line in Myfile:
-            print(line, end="")
+        print(Myfile.read(), end="")
