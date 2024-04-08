@@ -1,0 +1,12 @@
+#!/usr/bin/node
+// a script that prints the first argument passed to it
+const argCount = process.argv.length - 2;
+
+if (argCount === 0)
+{
+    console.log("No argument");
+}
+else
+{
+    console.log(argCount);
+}

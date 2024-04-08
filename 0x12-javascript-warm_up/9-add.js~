@@ -1,0 +1,11 @@
+#!/usr/bin/node
+// a script that prints the addition of 2 integers
+function add(a, b)
+{
+    a = process.argv[2];
+    b = process.argv[3];
+
+    console.log(a + b);
+}
+    
+ 
