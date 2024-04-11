@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-A script that takes in an argument and displays all values
-in the states table of hbtn_0e_0_usa where name matches the argument
+A script that takes in the name of a state as an argument
+and lists all cities of that state, using the database hbtn_0e_4_usa
 safe for MySQL injection
 """
 
@@ -20,11 +20,14 @@ if __name__ == "__main__":
             )
     cursor = db.cursor()
     match = sys.argv[4]
-    query = ("""SELECT * FROM states WHERE name LIKE %s
-            ORDER BY states.id ASC"""(match, ))
-    cursor.execute(query)
+    query = ("""SELECT cities.name
+    FROM states INNER JOIN cities
+    ON states.id = cities.state_id
+    WHERE states.name LIKE %s
+    ORDER BY states.id ASC""")
+    cursor.execute(query, (match, ))
     rows = cursor.fetchall()
-    for row in rows:
-        print(row)
+    city_names = ", ".join(row[0] for row in rows)
+    print(city_names)
     cursor.close()
     db.close()
