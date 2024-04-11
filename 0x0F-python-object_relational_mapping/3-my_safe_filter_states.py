@@ -20,9 +20,8 @@ if __name__ == "__main__":
             )
     cursor = db.cursor()
     match = sys.argv[4]
-    query = ("""SELECT * FROM states WHERE name LIKE %s
-            ORDER BY states.id ASC"""(match, ))
-    cursor.execute(query)
+    query = ("SELECT * FROM states WHERE name LIKE %s ORDER BY states.id ASC")
+    cursor.execute(query, (match,))
     rows = cursor.fetchall()
     for row in rows:
         print(row)
