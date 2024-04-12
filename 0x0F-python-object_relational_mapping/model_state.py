@@ -1,27 +1,17 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """
-A python file that contains the class definition of a State
-and an instance Base = declarative_base()
+Contains State class and Base, an instance of declarative_base()
 """
-from sqlalchemy import create_engine, String, Integer, Column, MetaData
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-import uuid
 
-mymetadata = MetaData()
-Base = declarative_base(metadata=mymetadata)
-
-
-def gen_unique_uuid():
-    return str(uuid.uuid4())
+Base = declarative_base()
 
 
 class State(Base):
     """
-    Defines a class State that inherits from Base
+    Class representing a State table in MySQL database
     """
-    __tablename__ = "states"
-    id = Column(
-            String, primary_key=True,
-            default=gen_unique_uuid, nullable=False
-            )
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
