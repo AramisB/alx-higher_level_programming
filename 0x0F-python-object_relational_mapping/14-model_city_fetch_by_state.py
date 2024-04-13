@@ -19,6 +19,8 @@ if __name__ == "__main__":
     session = Session()
     query = (
         session.query(State.name, City.id, City.name)
-        .filter(State.id == City.state_id))
+        .filter(State.id == City.state_id)
+        .order_by(City.id)
+    )
     for instance in query:
         print(instance[0] + ": (" + str(instance[1]) + ")" + instance[2])
