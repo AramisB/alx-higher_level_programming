@@ -1,2 +1,2 @@
-# Time complexity
+log(n)
 O(log(n))
