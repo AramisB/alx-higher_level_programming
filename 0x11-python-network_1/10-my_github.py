@@ -7,11 +7,12 @@ and uses the GitHub API to display your id
 
 if __name__ == "__main__":
     import requests
-    import sys
+from sys import argv
 
-    url = 'https://api.github.com/user'
-    req = requests.get(url, auth=(sys.argv[1], sys.argv[2])).json()
-    if 'id' in req:
-        print(req['id'])
-    else:
-        print('None')
+if __name__ == '__main__':
+    url = "https://api.github.com/repos/{}/{}/commits".format(argv[2], argv[1])
+    r = requests.get(url)
+    commits = r.json()
+    for commit in commits[:10]:
+        print(commit.get('sha'), end=': ')
+        print(commit.get('commit').get('author').get('name'))
