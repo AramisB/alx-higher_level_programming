@@ -15,5 +15,5 @@ if __name__ == "__main__":
     try:
         req_hId = r.headers['X-Request-Id']
         print(req_hId)
-    except URLError as e:
+    except ValueError:
         pass
