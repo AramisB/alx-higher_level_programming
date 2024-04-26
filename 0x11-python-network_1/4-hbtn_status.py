@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 """
- a Python script that fetches https://alx-intranet.hbtn.io/status
- using the requests package
+Script that fetches https://intranet.hbtn.io/status
 """
+import requests
 
-
-if __name__ == "__main__":
-    import requests
-
+if __name__ == '__main__':
     url = "https://intranet.hbtn.io/status"
     r = requests.get(url)
     text = r.text
