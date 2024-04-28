@@ -17,6 +17,7 @@ if __name__ == "__main__":
     owner_name = sys.argv[2]
     url = 'https://api.github.com/repos/{}/{}/commits'\
         .format(repository_name, owner_name)
+    print("URL: ", url)
     response = requests.get(url)
 
     if response.status_code == 200:
